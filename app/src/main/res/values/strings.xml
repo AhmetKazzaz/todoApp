@@ -1,0 +1,86 @@
+<resources>
+    <string name="app_name">Todo App</string>
+    <string name="CREATE_USER">Welcome to Todo App, Create your user and continue!</string>
+    <string name="REGISTER">Register</string>
+    <string name="FULL_NAME">Full Name</string>
+    <string name="USER_NAME">User Name</string>
+    <string name="PASSWORD">Password</string>
+    <string name="EMPTY_FIELD">Can\'t be left empty!</string>
+    <string name="WRONG_FORMAT">Wrong format!</string>
+    <string name="PASSWORDS_DONT_MATCH">Passwords don\'t match!</string>
+    <string name="EMAIL">Email</string>
+    <string name="CONFIRM_PASSWORD">Confirm Password</string>
+    <string name="WELCOME_TO_TODOAPP">Welcome to TodoApp</string>
+    <string name="SIGN_IN_TO_CONTINUE">Sign in to continue</string>
+    <string name="USERNAME">Username</string>
+    <string name="SIGN_UP_FOR_AN_ACCOUNT">SIGN UP FOR AN ACCOUNT?</string>
+    <string name="S_I_G_N_I_N">S I G N I N</string>
+    <string name="RECORD_DOESNT_EXIST">Record was not found!</string>
+    <string name="UNKOWN_ERROR">Uknown Error</string>
+    <string name="PASSWORD_WRONG">Password is wrong!</string>
+    <string name="WELCOME">Welcome</string>
+    <string name="COULDNT_CREATE_USER">Couldn\'t create user.</string>
+    <string name="TODO_LISTNAME">Todo List Name</string>
+    <string name="ADD">Add</string>
+    <string name="GIVE_NAME">Give it a name!</string>
+    <string name="YOUR_TODOLISTS">Your Todo Lists</string>
+    <string name="LOGOUT">Logout</string>
+    <string name="ARE_YOU_SURE">Are you sure?</string>
+    <string name="LOGOUT_WARNING_MESSAGE">You\'ll have to sign in again next time you enter the application.</string>
+    <string name="SURE">I\'m Sure</string>
+    <string name="CANCEL">Cancel</string>
+    <string name="TODOLIST_DELETED">Todolist Successfully Deleted!</string>
+    <string name="UNDO_DELETE">Undo</string>
+    <string name="FAB_TRANSITION">fab_transition</string>
+    <string name="ITEM_TITLE">Item Name</string>
+    <string name="ITEM_DESCRIPTION">Your Item\'s Description</string>
+    <string name="ITEM_DEADLINE">Set the Item\'s deadline</string>
+    <string name="select_date">Select Date</string>
+    <string name="NEW_ITEM_CREATED">New todo item created!</string>
+    <string name="DELETE">Delete</string>
+    <string name="MARK_COMPLETED">Mark Completed</string>
+    <string name="MENU_SHAPE">⋮</string>
+    <string name="MARK_INCOMPLETE">Mark Incomplete</string>
+    <string name="SEARCH">Search</string>
+    <string name="FILTERS">Filters</string>
+    <string name="ALL">All</string>
+    <string name="COMPLETE">Complete</string>
+    <string name="NOT_COMPLETE">Not Complete</string>
+    <string name="STATUS">STATUS</string>
+    <string name="SORT_BY">SORT BY</string>
+    <string name="EXPIRY">EXPIRY</string>
+    <string name="NAME">Name</string>
+    <string name="DESCRIPTION">Description</string>
+    <string name="IS_COMPLETE">Is Complete</string>
+    <string name="DEADLINE">Deadline</string>
+    <string name="STATUS_SMALL_LETTERS">Status</string>
+    <string name="CREATED_AT">Created At</string>
+    <string name="TODO_LIST_DIR_NAME">Todo-List</string>
+    <string name="EXPORT">Export To Excel</string>
+    <string name="NO_TODO_ITEMS_YET">No Todo Items yet, go ahead and create!</string>
+    <string name="WRITING_PERMISSION_IS_NEEDED">Writing permission is need to export data!</string>
+    <string name="EXPORTED_TO_DIRECTORY">Todo exported to downloads directory successfully</string>
+    <string name="ERROR_EXPORTING">Unexpected error while exporting!</string>
+    <string name="PERMISSION_GRANTED_EXPORT_NOW">Permission Granted, export now</string>
+    <string name="SHARE_EMAIL">SHARE EMAIL</string>
+
+
+    <string-array name="ARR_OPTIONS_STATUS">
+        <item>All</item>
+        <item>Complete</item>
+        <item>Incomplete</item>
+    </string-array>
+
+    <string-array name="ARR_OPTIONS_SORT">
+        <item>Create date</item>
+        <item>Deadline</item>
+        <item>Name</item>
+        <item>Status</item>
+    </string-array>
+
+    <string-array name="ARR_OPTIONS_EXPIRY">
+        <item>All</item>
+        <item>Expired</item>
+        <item>Not Expired (a better caption???)</item>
+    </string-array>
+</resources>

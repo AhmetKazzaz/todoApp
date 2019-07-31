@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="OptionsSelectorView">
+        <attr name="groupTitle" format="string" />
+        <attr name="android:entries" />
+        <attr name="onOptionChanged" />
+        <attr name="selectedIndex" format="integer" />
+    </declare-styleable>
+</resources>

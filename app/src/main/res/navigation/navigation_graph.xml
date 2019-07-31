@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_navigation_graph"
+    app:startDestination="@+id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.myapplication.view.fragment.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/splashToLogin"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/auth_navigation_graph"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/splashToTodo"
+            app:destination="@id/todoListsFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/auth_navigation_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.myapplication.view.fragment.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/loginToRegister"
+            app:destination="@id/registerFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/loginToTodo"
+            app:destination="@+id/todoListsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.myapplication.view.fragment.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/registerToLogin"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/auth_navigation_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/todoListsFragment"
+        android:name="com.example.myapplication.view.fragment.TodoListsFragment"
+        android:label="@string/YOUR_TODOLISTS"
+        tools:layout="@layout/fragment_todo_lists">
+        <argument
+            android:name="userId"
+            android:defaultValue="-1L"
+            app:argType="long" />
+        <action
+            android:id="@+id/todoListToTodoDetail"
+            app:destination="@id/todoListDetailFragment" />
+        <action
+            android:id="@+id/action_todoListsFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/todoListDetailFragment"
+        android:name="com.example.myapplication.view.fragment.TodoListDetailFragment"
+        android:label="fragment_todo_list_detail"
+        tools:layout="@layout/fragment_todo_list_detail">
+        <argument
+            android:name="todoListId"
+            android:defaultValue="-1L"
+            app:argType="long" />
+        <action
+            android:id="@+id/itemsListToItemForm"
+            app:destination="@id/createUpdateTodoItem"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/itemsListToFilters"
+            app:destination="@id/filtersFragment"
+            app:enterAnim="@anim/slide_in_from_top"
+            app:exitAnim="@anim/slide_out_to_top"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="todoListName"
+            app:argType="string"
+            android:defaultValue="null" />
+    </fragment>
+    <fragment
+        android:id="@+id/filtersFragment"
+        android:name="com.example.myapplication.view.fragment.FiltersFragment"
+        android:label="@string/FILTERS"
+        tools:layout="@layout/fragment_filters" />
+    <fragment
+        android:id="@+id/createUpdateTodoItem"
+        android:name="com.example.myapplication.view.fragment.TodoItemFormFragment"
+        android:label="fragment_create_update_todo_item"
+        tools:layout="@layout/fragment_form_todo_item">
+        <argument
+            android:name="todoListId"
+            android:defaultValue="-1L"
+            app:argType="long" />
+        <argument
+            android:name="todoItemId"
+            android:defaultValue="-1L"
+            app:argType="long" />
+        <action
+            android:id="@+id/todoFormToTodoItems"
+            app:destination="@id/todoListDetailFragment" />
+        <argument
+            android:name="todoItemName"
+            app:argType="string" />
+    </fragment>
+</navigation>

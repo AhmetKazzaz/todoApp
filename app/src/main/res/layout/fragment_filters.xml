@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.example.myapplication.view.fragment.FiltersFragment.EventHandler" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.fragment.FiltersFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f7f7f7"
+            android:orientation="vertical">
+
+            <com.example.myapplication.view.OptionsSelectorView
+                android:id="@+id/orderSelector"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:entries="@array/ARR_OPTIONS_SORT"
+                app:groupTitle="@string/SORT_BY"
+                app:onOptionChanged="@{handler::onChanged}" />
+
+            <com.example.myapplication.view.OptionsSelectorView
+                android:id="@+id/statusSelector"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:entries="@array/ARR_OPTIONS_STATUS"
+                app:groupTitle="@string/STATUS"
+                app:onOptionChanged="@{handler::onChanged}" />
+
+            <com.example.myapplication.view.OptionsSelectorView
+                android:id="@+id/expirySelector"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:entries="@array/ARR_OPTIONS_EXPIRY"
+                app:groupTitle="@string/EXPIRY"
+                app:onOptionChanged="@{handler::onChanged}" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>
