@@ -3,7 +3,7 @@
 A simple todo app that lets users create a todo list with multiple todo items, each item having basic attributes like name, description, status etc...
 
 #### How to run/install
-This Application has no difficulties in installing and running, clone the project, build and run the app directyly on your phone or emulator. 
+This Application has no difficulties in installing and running, clone the project, build and run the app directly on your phone or emulator. 
 ###### 1 Sign Up:
 Click on sign up from login page and input your user infortmation.
 ###### 2 Log In:
@@ -11,7 +11,7 @@ After signing up, go ahead and login.
 ###### 3 TodoLists:
 Create a Todo List from Todolits screen.
 ###### 4 Todo Item: 
-Click on your newly creted Todo List and create a new Item by entering the fields.
+Click on your newly created Todo List and create a new Item by entering the fields.
 ###### 5 Update Todo Items: 
 Update TodoItem's status to incomplete/complete and change the previously entered data.
 ###### 6 Delete Items/Lists: 
@@ -26,13 +26,13 @@ Export TodoList to Csv format that is readble by excel and many programs. share 
 
 **The app has the following packages:**
 
-* `model:` Directory holds all database/logic related classes.
+* `model:` package holds all database/logic related classes.
     -`converters:` contains a date converter class. 
     -`dao:` Data Access Objects classes for Room Database.
     -`entities:` Database Entitiy classes that represent the tables.
     -`relations:` holds a relation between two entities.
     -`repository:` repistory classes that represent the data layer to the application.
-* `ui:` Directory holds ui classes such as custom views and callbacks.
+* `ui:` package holds ui classes such as custom views and callbacks.
      -`adapter:` has recyclerviews' adapters.
 * `utility:` contains classes that deal with file convertion
 * `view:` activities/fragments are declared under this package.
