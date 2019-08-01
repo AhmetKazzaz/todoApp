@@ -97,8 +97,8 @@
             app:popUpToInclusive="true" />
         <argument
             android:name="todoListName"
-            app:argType="string"
-            android:defaultValue="null" />
+            android:defaultValue="null"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/filtersFragment"
@@ -108,7 +108,7 @@
     <fragment
         android:id="@+id/createUpdateTodoItem"
         android:name="com.example.myapplication.view.fragment.TodoItemFormFragment"
-        android:label="fragment_create_update_todo_item"
+        android:label="Add Todo Item"
         tools:layout="@layout/fragment_form_todo_item">
         <argument
             android:name="todoListId"
@@ -123,6 +123,7 @@
             app:destination="@id/todoListDetailFragment" />
         <argument
             android:name="todoItemName"
-            app:argType="string" />
+            app:argType="string"
+            android:defaultValue="Add Todo Item" />
     </fragment>
 </navigation>

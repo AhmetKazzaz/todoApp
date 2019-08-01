@@ -67,7 +67,9 @@ public class TodoItemFormFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        getActivity().setTitle(TodoItemFormFragmentArgs.fromBundle(getArguments()).getTodoItemName());
+        if(TodoItemFormFragmentArgs.fromBundle(getArguments()).getTodoItemName() != null){
+            getActivity().setTitle(TodoItemFormFragmentArgs.fromBundle(getArguments()).getTodoItemName());
+        }
         viewModel = ViewModelProviders.of(this).get(TodoItemViewModel.class);
         viewModel.findById(TodoItemFormFragmentArgs.fromBundle(getArguments()).getTodoItemId());
         viewModel.onItemCreated().observe(getViewLifecycleOwner(), aLong ->

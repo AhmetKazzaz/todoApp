@@ -15,8 +15,6 @@ import com.example.myapplication.ui.TodoListsDiffCallback;
 
 import java.util.ArrayList;
 
-// TODO: 7/27/2019 http://creativecommons.org/licenses/by/3.0/ Image license
-// TODO: https://www.flaticon.com/free-icon/excel_732220#term=excel&page=1&position=1 Image license
 public class TodoListsAdapter extends RecyclerView.Adapter<TodoListsAdapter.TodoListViewHolder> {
 
     private OnItemClickListener itemClickListener;

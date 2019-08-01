@@ -174,7 +174,10 @@ public class TodoListDetailFragment extends Fragment implements TodoItemsAdapter
     @Override
     public void onItemClicked(TodoItem todoItem) {
         Navigation.findNavController(getActivity(), R.id.nav_host_fragment).navigate(
-                TodoListDetailFragmentDirections.itemsListToItemForm(todoItem.getName()).setTodoItemId(todoItem.getId()));
+                TodoListDetailFragmentDirections.itemsListToItemForm()
+                        .setTodoItemId(todoItem.getId())
+                        .setTodoItemName(todoItem.getName())
+        );
     }
 
 
@@ -187,7 +190,7 @@ public class TodoListDetailFragment extends Fragment implements TodoItemsAdapter
         public void onAddFabClicked(View view) {
             if (getActivity() != null)
                 Navigation.findNavController(getActivity(), R.id.nav_host_fragment).navigate(
-                        TodoListDetailFragmentDirections.itemsListToItemForm(todoItem.getName()).setTodoListId(
+                        TodoListDetailFragmentDirections.itemsListToItemForm().setTodoListId(
                                 TodoListDetailFragmentArgs.fromBundle(getArguments()).getTodoListId()));
         }
 

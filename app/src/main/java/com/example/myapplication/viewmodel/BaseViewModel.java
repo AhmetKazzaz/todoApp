@@ -15,7 +15,10 @@ import com.example.myapplication.utility.SingleLiveEvent;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
-
+/**
+ * Baseview model responsible for dealing with the disposable objects
+ * and posting errors when they occur. acts as a base for all extending viewmodels
+ */
 abstract public class BaseViewModel extends AndroidViewModel {
     private CompositeDisposable disposables = new CompositeDisposable();
     protected SingleLiveEvent<Error> onError = new SingleLiveEvent<>();

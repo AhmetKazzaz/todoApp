@@ -37,7 +37,6 @@ public class TodoListsDiffCallback extends DiffUtil.Callback {
 
     @Override
     public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
-        // TODO: 7/27/2019 How to compare contents? I've overridden equals and hashcode methods!
         return oldList.get(oldItemPosition).equals(newList.get(newItemPosition));
     }
 }

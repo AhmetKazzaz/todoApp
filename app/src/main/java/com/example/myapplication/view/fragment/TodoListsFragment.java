@@ -112,8 +112,37 @@ public class TodoListsFragment extends Fragment implements YesNoDialog.OnDismiss
             );
         });
 
+        onFileCreated();
+
+        viewModel.onTodoListEmpty().observe(getViewLifecycleOwner(),
+                aBoolean -> makeSnackBar(R.string.NO_TODO_ITEMS_YET).show());
+
+        viewModel.onTodoListTempDeleted().observe(getViewLifecycleOwner(), isTempDeleted -> {
+            Snackbar.Callback onDismissed = new Snackbar.Callback() {
+                @Override
+                public void onDismissed(Snackbar transientBottomBar, int event) {
+                    super.onDismissed(transientBottomBar, event);
+                    if (event != DISMISS_EVENT_ACTION) {
+                        viewModel.deleteTodoList(todoList);
+                    }
+                }
+            };
+            View.OnClickListener onClickListener = v -> viewModel.tempDeleteTodoList(todoList, false);
+            showUndoSnackBar(
+                    R.string.TODOLIST_DELETED,
+                    R.string.UNDO_DELETE,
+                    onClickListener,
+                    onDismissed
+            );
+        });
+        enableSwipeToDelete(todoListsAdapter);
+
+    }
+
+    //handles file creation and shares to email
+    private void onFileCreated() {
         viewModel.onFileCreated().observe(getViewLifecycleOwner(), file -> {
-            if (file != null) {// 1 sec
+            if (file != null) {
                 Snackbar.Callback onDismissed = new Snackbar.Callback() {
                     @Override
                     public void onDismissed(Snackbar transientBottomBar, int event) {
@@ -156,27 +185,6 @@ public class TodoListsFragment extends Fragment implements YesNoDialog.OnDismiss
                 makeSnackBar(R.string.ERROR_EXPORTING).show();
             }
         });
-
-        viewModel.onTodoListTempDeleted().observe(getViewLifecycleOwner(), isTempDeleted -> {
-            Snackbar.Callback onDismissed = new Snackbar.Callback() {
-                @Override
-                public void onDismissed(Snackbar transientBottomBar, int event) {
-                    super.onDismissed(transientBottomBar, event);
-                    if (event != DISMISS_EVENT_ACTION) {
-                        viewModel.deleteTodoList(todoList);
-                    }
-                }
-            };
-            View.OnClickListener onClickListener = v -> viewModel.tempDeleteTodoList(todoList, false);
-            showUndoSnackBar(
-                    R.string.TODOLIST_DELETED,
-                    R.string.UNDO_DELETE,
-                    onClickListener,
-                    onDismissed
-            );
-        });
-        enableSwipeToDelete(todoListsAdapter);
-
     }
 
     // shows a snackBar with undo delete button in case the user deleted by mistake

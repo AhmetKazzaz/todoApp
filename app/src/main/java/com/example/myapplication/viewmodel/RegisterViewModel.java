@@ -30,10 +30,7 @@ public class RegisterViewModel extends BaseViewModel {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         id -> onUserCreated.postValue(id),
-                        error -> {
-                            //todo check if error is uniqueconstraint exception or sometihng
-                            postError(R.string.COULDNT_CREATE_USER);
-                        }
+                        error -> postError(R.string.COULDNT_CREATE_USER)
                 );
 
         toDispose(disposable);

@@ -24,6 +24,7 @@ public class TodoListViewModel extends BaseViewModel {
 
     private MutableLiveData<List<TodoList>> onListUpdated = new MutableLiveData<>();
     private SingleLiveEvent<Boolean> onTodoListTempDeleted = new SingleLiveEvent<>();
+    private SingleLiveEvent<Boolean> onTodoListEmpty = new SingleLiveEvent<>();
     private SingleLiveEvent<File> onFileCreated = new SingleLiveEvent<>();
 
 
@@ -68,7 +69,7 @@ public class TodoListViewModel extends BaseViewModel {
                                         CsvHelper.getInstance()
                                                 .convertToCsv(todoItems, todoListName, fileHeadersForExcel()));
                             } else {
-//                                onFileCreated.postVa?lue(R.string.NO_TODO_ITEMS_YET);
+                                onTodoListEmpty.postValue(true);
                             }
                         }, this::onQueryError)
         );
@@ -133,5 +134,9 @@ public class TodoListViewModel extends BaseViewModel {
 
     public SingleLiveEvent<File> onFileCreated() {
         return onFileCreated;
+    }
+
+    public SingleLiveEvent<Boolean> onTodoListEmpty() {
+        return onTodoListEmpty;
     }
 }
