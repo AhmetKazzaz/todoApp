@@ -95,15 +95,15 @@ public class TodoItemViewModel extends BaseViewModel {
     }
 
     public int getOrderBy() {
-        return Arrays.asList(orderValues).indexOf(criteria.orderBy);
+        return orderValues.indexOf(criteria.orderBy);
     }
 
     public int getStatus() {
-        return Arrays.asList(statusValues).indexOf(criteria.completionState);
+        return statusValues.indexOf(criteria.completionState);
     }
 
     public int getExpiryState() {
-        return Arrays.asList(expiryValues).indexOf(criteria.expiryState);
+        return expiryValues.indexOf(criteria.expiryState);
     }
 
     public void update(TodoItem item, boolean isTempDeleted) {
