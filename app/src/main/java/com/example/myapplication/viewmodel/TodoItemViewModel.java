@@ -11,6 +11,7 @@ import com.example.myapplication.model.repository.TodoItemRepository;
 import com.example.myapplication.model.repository.TodoItemSearchCriteria;
 import com.example.myapplication.utility.SingleLiveEvent;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -92,6 +93,12 @@ public class TodoItemViewModel extends BaseViewModel {
         criteria.expiryState = expiryValues.get(index);
 
         reloadData();
+    }
+
+    public void clearFilters() {
+        criteria = new TodoItemSearchCriteria();
+
+        onListUpdated.postValue(new ArrayList<>());
     }
 
     public int getOrderBy() {

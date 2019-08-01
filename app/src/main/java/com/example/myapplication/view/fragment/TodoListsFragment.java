@@ -36,6 +36,7 @@ import com.example.myapplication.ui.AddNewTodoListDialog;
 import com.example.myapplication.ui.SwipeToDeleteCallback;
 import com.example.myapplication.ui.YesNoDialog;
 import com.example.myapplication.ui.adapter.TodoListsAdapter;
+import com.example.myapplication.viewmodel.TodoItemViewModel;
 import com.example.myapplication.viewmodel.TodoListViewModel;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -245,6 +246,11 @@ public class TodoListsFragment extends Fragment implements YesNoDialog.OnDismiss
 
     @Override
     public void onItemClicked(TodoList todoList) {
+        // when navigating from todolists to todoitems
+        // we're going to clear the filters
+        // because both TodoListDetailFragment and FiltersFragment use a shared viewmodel (activity scope).
+        ViewModelProviders.of(getActivity()).get(TodoItemViewModel.class).clearFilters();
+
         // Check if we're running on Android 5.0 or higher for animation
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             FragmentNavigator.Extras extras = new FragmentNavigator.Extras.Builder()
